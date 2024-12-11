@@ -24,7 +24,7 @@
   "dependencies": {
     "@astrojs/markdown-remark": "^5.2.0",
     "@astrojs/rss": "^4.0.7",
-    "@astrojs/starlight": "0.29.0",
+    "@astrojs/starlight": "0.29.2",
     "@lorenzo_lewis/starlight-utils": "^0.2.0",
     "@lunariajs/core": "^0.1.1",
     "@lunariajs/starlight": "^0.1.1",
@@ -40,16 +40,16 @@
     "sass": "^1.77.2",
     "sharp": "^0.33.2",
     "shiki": "^1.1.7",
-    "starlight-blog": "^0.14.0",
+    "starlight-blog": "^0.15.0",
     "starlight-links-validator": "^0.13.0"
   },
-  "packageManager": "pnpm@9.13.2",
+  "packageManager": "pnpm@9.15.0",
   "engines": {
     "pnpm": "^9.0.0"
   },
   "pnpm": {
     "patchedDependencies": {
-      "@astrojs/starlight@0.29.0": "patches/@astrojs__starlight@0.29.0.patch"
+      "@astrojs/starlight@0.29.2": "patches/@astrojs__starlight@0.29.2.patch"
     }
   }
 }
