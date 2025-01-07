@@ -9,7 +9,7 @@ tableOfContents:
 import { Tabs, TabItem, Steps } from '@astrojs/starlight/components';
 import CommandTabs from '@components/CommandTabs.astro';
 
-SvelteKit は Svelte 用のメタ・フレームワークです。SvelteKit の詳細は「公式サイト https://kit.svelte.dev/」をご覧ください。以下の説明内容は「SvelteKit 2.5.7 / Svelte 4.2.15」に準拠しています。
+SvelteKit（スヴェルトキット）は Svelte（スヴェルト）用のメタ・フレームワークです。SvelteKit の詳細は「公式サイト https://kit.svelte.dev/」をご覧ください。以下の説明内容は「SvelteKit 2.5.7 / Svelte 4.2.15」に準拠しています。
 
 ## チェック項目
 
@@ -121,7 +121,7 @@ SvelteKit は Svelte 用のメタ・フレームワークです。SvelteKit の�
 
 1.  ##### 「SSR」の無効化
 
-    最後に、「SSR」を無効化し、以下の内容を含む「ルート `+layout.ts` ファイル」（TypeScript を使用していない場合は `+layout.js`）を追加して、事前レンダリングを有効化する必要があります：
+    最後に、「SSR」（サーバーサイドレンダリング）を無効化し、以下の内容を含む「ルート `+layout.ts` ファイル」（TypeScript を使用していない場合は `+layout.js`）を追加して、事前レンダリングを有効化する必要があります：
 
     ```ts
     // src/routes/+layout.ts
@@ -131,10 +131,12 @@ SvelteKit は Svelte 用のメタ・フレームワークです。SvelteKit の�
 
     `static-adapter` は、アプリ全体に対して「SSR を無効化」することを求めているわけではありませんが、そうすることで、（Tauri の API のような）グローバル・ウィンドウ・オブジェクトに依存する API を [クライアント側のチェック](https://kit.svelte.dev/docs/faq#how-do-i-use-x-with-sveltekit-how-do-i-use-a-client-side-only-library-that-depends-on-document-or-window) なしで使用できるようになります。《リンク先は、Svelte 公式サイトの FQA ページ（英語版）です》
 
-    さらにいえば、「SSG」よりも「シングルページ・アプリケーション (SPA)」モードを好む場合は、[アダプタ関連ドキュメント](https://kit.svelte.dev/docs/single-page-apps) 《英語版ページ》に従ってアダプタ設定と `+layout.ts` を変更できます。
+    さらにいえば、「SSG」（静的サイト生成）よりも「シングルページ・アプリケーション (SPA)」モードを好む場合は、[アダプタ関連ドキュメント](https://kit.svelte.dev/docs/single-page-apps) 《英語版ページ》に従ってアダプタ設定と `+layout.ts` を変更できます。
 
 </Steps>
 
-<p text-align: right>
-【※ JP text based on EN Nov 01, 2024】
-</p>
+
+<div style="text-align: right;">
+【※ この日本語版は、「Nov 01, 2024 英語版」に基づいています】<br />
+Doc-JP 2.00.00
+</div>
