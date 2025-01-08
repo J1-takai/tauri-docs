@@ -63,7 +63,7 @@ Tauri v2 CLI には、移行作業の大部分を自動化する `migrate` コ�
     cargo tauri migrate'
 />
 
-`migrate` コマンドの詳細については、[コマンドライン・インターフェース・リファレンス](/reference/cli/#migrate) を参照してください。
+`migrate` コマンドの詳細については、[コマンドライン・インターフェース・リファレンス](../reference/cli/#migrate) を参照してください。
 
 ## 変更の概要
 
@@ -99,7 +99,7 @@ Tauri 1.0 から Tauri 2.0 への変更内容の概要は以下のとおりで�
 - `build > distDir` を `frontendDist` に改称。
 - `build > devPath` を `devUrl` に改称。
 
-[Tauri 2.0 設定 API レファレンス](/reference/config/)
+[Tauri 2.0 設定 API レファレンス](../reference/config/)
 
 ### Cargo の新機能
 
@@ -1185,7 +1185,7 @@ Tauri バージョン 1（v1）では、外部バイナリとその引数は許�
 
 JavaScript 関連では、[Shell プラグインの移行](#shell-プラグインの移行) の内容を必ず実行して下さい。
 
-Rust 関連では、`tauri::api::process` API が削除されています。代わりに `tauri_plugin_shell::ShellExt` および `tauri_plugin_shell::process::CommandEvent` API を使用してください。使用法については、[外部バイナリの埋め込み](/develop/sidecar/#rust-から実行) ガイドを参照して下さい。
+Rust 関連では、`tauri::api::process` API が削除されています。代わりに `tauri_plugin_shell::ShellExt` および `tauri_plugin_shell::process::CommandEvent` API を使用してください。使用法については、[外部バイナリの埋め込み](../develop/sidecar/#rust-から実行) ガイドを参照して下さい。
 
 「process-command-api」機能フラグは バージョン 2（v2）で削除されました。そのため、外部バイナリの実行に、この機能を Tauri 構成で定義する必要がなくなりました。
 
@@ -1198,8 +1198,10 @@ Rust 関連では、`tauri::api::process` API が削除されています。代�
 
 `migrate` CLI コマンドは、v1 許可リストを自動的に解析し、関連する機能ファイルを生成します。
 
-許可と機能の詳細については、[セキュリティ関連文書](/security/)を参照してください。
+許可と機能の詳細については、[セキュリティ関連文書](../security/)を参照してください。
 
-<p text-align: right>
-【※ JP text based on EN Nov 13, 2024】
-</p>
+<div style="text-align: right;">
+【※ この日本語版は、「Nov 13, 2024 英語版」に基づいています】<br />
+Doc-JP 2.00.00
+</div>
+
