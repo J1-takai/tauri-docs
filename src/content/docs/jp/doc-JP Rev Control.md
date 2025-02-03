@@ -29,19 +29,19 @@ For the details of EN/JP doc status, see the listing below: <br> 文書番号の
 
 ### Home/Quick Start
 
-#### Index.mdx
+#### index.mdx
 
 | EN Doc # | EN Doc Date | JP Doc # | JP Doc Date |
 | :---: | :--- | :---: | :--- |
 | **00** | 2025/01/01 | **00** | 2025/01/06 |
 
-#### 404.
+#### 404.md
 
 | EN Doc # | EN Doc Date | JP Doc # | JP Doc Date |
 | :---: | :--- | :---: | :--- |
 | **00** | 2025/01/01 | **00** | 2025/01/06 |
 
-#### rss.
+#### rss.mdx
 
 | EN Doc # | EN Doc Date | JP Doc # | JP Doc Date |
 | :---: | :--- | :---: | :--- |
@@ -73,7 +73,7 @@ For the details of EN/JP doc status, see the listing below: <br> 文書番号の
 | :---: | :--- | :---: | :--- |
 | **00** | 2024/10/01 | **00** | 2025/01/07 |
 
-#### frontend/leptos.
+#### frontend/leptos.mdx
 
 | EN Doc # | EN Doc Date | JP Doc # | JP Doc Date |
 | :---: | :--- | :---: | :--- |
@@ -147,7 +147,7 @@ For the details of EN/JP doc status, see the listing below: <br> 文書番号の
 | :---: | :--- | :---: | :--- |
 | **00** | 2024/11/11 | **00** | 2025/01/15 |
 
-### concept/process-model.
+### concept/process-model.mdx
 
 | EN Doc # | EN Doc Date | JP Doc # | JP Doc Date |
 | :---: | :--- | :---: | :--- |
