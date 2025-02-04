@@ -63,7 +63,7 @@ Tauri v2 CLI には、移行作業の大部分を自動化する `migrate` コ�
     cargo tauri migrate'
 />
 
-`migrate` コマンドの詳細については、[コマンドライン・インターフェース・リファレンス](../reference/cli/#migrate) を参照してください。
+`migrate` コマンドの詳細については、[コマンドライン・インターフェース・リファレンス](/jp/reference/cli/#migrate) を参照してください。
 
 ## 変更の概要
 
@@ -83,7 +83,7 @@ Tauri 1.0 から Tauri 2.0 への変更内容の概要は以下のとおりで�
 - `tauri > updater > dialog` を削除。
 - `tauri > updater` を `plugins > updater` へ移動。
 - `bundle > createUpdaterArtifacts` を追加。アプリ・アップデーターを使用する場合には設定する必要があります。
-  - すでに配布されている v1 アプリをアップグレードする場合は、これを `v1compatible` に設定してください。詳しくは [アップデーター・ガイド](/plugin/updater/) を参照してください。
+  - すでに配布されている v1 アプリをアップグレードする場合は、これを `v1compatible` に設定してください。詳しくは [アップデーター・ガイド](/jp/plugin/updater/) を参照してください。
 - `tauri > systemTray` を `app > trayIcon` に改称。
 - `tauri > pattern` を `app > security > pattern` へ移動。
 - `tauri > bundle` をトップレベルへ移動。
@@ -99,7 +99,7 @@ Tauri 1.0 から Tauri 2.0 への変更内容の概要は以下のとおりで�
 - `build > distDir` を `frontendDist` に改称。
 - `build > devPath` を `devUrl` に改称。
 
-[Tauri 2.0 設定 API レファレンス](../reference/config/)
+[Tauri 2.0 設定 API レファレンス](/jp/reference/config/)
 
 ### Cargo の新機能
 
@@ -119,45 +119,45 @@ Tauri 1.0 から Tauri 2.0 への変更内容の概要は以下のとおりで�
 ### Rust クレートの変更点
 
 - `api` モジュールは削除されました。各 API モジュールは、「Tauri プラグイン」にある移行先を参照してください。
-- `api::dialog` モジュールは削除されました。代わりに `tauri-plugin-dialog` を使用して下さい。 [移行先](#migrate-to-dialog-plugin)
-- `api::file` モジュールは削除されました。代わりに、Rust の  [`std::fs`](https://doc.rust-lang.org/std/fs/) を使用して下さい。
-- `api::http` モジュールは削除されました。代わりに `tauri-plugin-http` を使用して下さい。 [移行先](#migrate-to-http-plugin)
+- `api::dialog` モジュールは削除されました。代わりに `tauri-plugin-dialog` を使用して下さい。 [移行先](#dialog-プラグインの移行)
+- `api::file` モジュールは削除されました。代わりに、Rust の [`std::fs`](https://doc.rust-lang.org/std/fs/) を使用して下さい。
+- `api::http` モジュールは削除されました。代わりに `tauri-plugin-http` を使用して下さい。 [移行先](#http-プラグインの移行)
 - `api::ip` モジュールは書き直され、`tauri::ipc` に移動しました。新しい API群、特に `tauri::ipc::Channel` を確認してください。
-- `api::path` モジュール機能と `tauri::PathResolved` は `tauri::Manager::path` へ移動しました。 [移行先](#migrate-path-to-tauri-manager)
-- `api::process::Command`、`tauri::api::shell` および `tauri::Manager::shell_scope` の各 API は削除されました。代わりに `tauri-plugin-shell` を使用してください。 [移行先](#migrate-to-shell-plugin)
+- `api::path` モジュール機能と `tauri::PathResolved` は `tauri::Manager::path` へ移動しました。 [移行先](#Path-to-Tauri-Manager-の移行)
+- `api::process::Command`、`tauri::api::shell` および `tauri::Manager::shell_scope` の各 API は削除されました。代わりに `tauri-plugin-shell` を使用してください。 [移行先](#Shell プラグインの移行)
 - `api::process::current_binary` および `tauri::api::process::restart` は `tauri::process` へ移動しました。
 - `api::version` モジュールは削除されました。代わりに [semver crate](https://docs.rs/semver/latest/semver/) を使用して下さい。
-- `App::clipboard_manager` および `AppHandle::clipboard_manager` は削除されました。代わりに `tauri-plugin-clipboard` を使用してください。 [移行先](#migrate-to-clipboard-plugin)
-- `App::get_cli_matches` は削除されました。代わりに `tauri-plugin-cli` を使用して下さい。 [移行先](#migrate-to-cli-plugin)
-- `App::global_shortcut_manager` および `AppHandle::global_shortcut_manager` は削除されました。代わりに `tauri-plugin-global-shortcut` を使用して下さい。 [移行先](#migrate-to-global-shortcut-plugin)
-- `Manager::fs_scope` は削除されました。「ファイル・システム・スコープ」は  `tauri_plugin_fs::FsExt` 経由でアクセス可能です。
+- `App::clipboard_manager` および `AppHandle::clipboard_manager` は削除されました。代わりに `tauri-plugin-clipboard` を使用してください。 [移行先](#clipboard-プラグインの移行)
+- `App::get_cli_matches` は削除されました。代わりに `tauri-plugin-cli` を使用して下さい。 [移行先](#cli-プラグインの移行)
+- `App::global_shortcut_manager` および `AppHandle::global_shortcut_manager` は削除されました。代わりに `tauri-plugin-global-shortcut` を使用して下さい。 [移行先](#global-shortcut-プラグインの移行)
+- `Manager::fs_scope` は削除されました。「ファイル・システム・スコープ」は `tauri_plugin_fs::FsExt` 経由でアクセス可能です。
 - `Plugin::PluginApi` は、プラグイン設定を2番目の引数として受け取るようになりました。
 - `Plugin::setup_with_config` は削除されました。代わりに最新の `tauri::Plugin::PluginApi` を使用して下さい。
 - `scope::ipc::RemoteDomainAccessScope::enable_tauri_api` および `scope::ipc::RemoteDomainAccessScope::enables_tauri_api` は削除されました。代わりに `scope::ipc::RemoteDomainAccessScope::add_plugin` 経由で各コア・プラグインを個々に有効化してください。
 - `scope::IpcScope` は削除されました。代わりに `scope::ipc::Scope` を使用してください。
 - `scope::FsScope`、`scope::GlobPattern` および `scope::FsScopeEvent` は削除されました。それぞれ、`scope::fs::Scope`、`scope::fs::Pattern` および `scope::fs::Event` を使用して下さい。
-- `updater` モジュールは削除されました。代わりに `tauri-plugin-updater` を使用して下さい。[移行先](#migrate-to-updater-plugin)
+- `updater` モジュールは削除されました。代わりに `tauri-plugin-updater` を使用して下さい。[移行先](#Updater-プラグインの移行)
 - `Env.args` フィールドは削除されました。代わりに `Env.args_os` フィールドを使用して下さい。
-- `Menu`、`MenuEvent`、`CustomMenuItem`、`Submenu`、`WindowMenuEvent`、`MenuItem` および `Builder::on_menu_event` の各 API は削除されました。[移行先](#migrate-to-menu)
-- `SystemTray`、`SystemTrayHandle`、`SystemTrayMenu`、`SystemTrayMenuItemHandle`、`SystemTraySubmenu`、`MenuEntry` および `SystemTrayMenuItem` の各 API は削除されました。[移行先](#migrate-to-tray-icon-module)
+- `Menu`、`MenuEvent`、`CustomMenuItem`、`Submenu`、`WindowMenuEvent`、`MenuItem` および `Builder::on_menu_event` の各 API は削除されました。[移行先](#Menu-モジュールの移行)
+- `SystemTray`、`SystemTrayHandle`、`SystemTrayMenu`、`SystemTrayMenuItemHandle`、`SystemTraySubmenu`、`MenuEntry` および `SystemTrayMenuItem` の各 API は削除されました。[移行先](#Tray-Icon-モジュールの移行)
 
 ### JavaScript API の変更点
 
 `@tauri-apps/api` パッケージは、コア以外のモジュールを提供しなくなりました。これまでの `tauri` (現行では `core`)、`path`、`event`、`window` の各モジュールのみがエクスポートされます。その他はすべてプラグインに移動されました。
 
-- `@tauri-apps/api/tauri` モジュールは `@tauri-apps/api/core` に改称されました。[移行先](#migrate-to-core-module)
-- `@tauri-apps/api/cli` モジュールは削除されました。代わりに `@tauri-apps/plugin-cli` を使用して下さい。[移行先](#migrate-to-cli-plugin)
-- `@tauri-apps/api/clipboard` モジュールは削除されました。代わりに `@tauri-apps/plugin-clipboard` を使用して下さい。[移行先](#migrate-to-clipboard-plugin)
-- `@tauri-apps/api/dialog` モジュールは削除されました。代わりに `@tauri-apps/plugin-dialog` を使用して下さい。[移行先](#migrate-to-dialog-plugin)
-- `@tauri-apps/api/fs` モジュールは削除されました。代わりに `@tauri-apps/plugin-fs` を使用して下さい。[移行先](#migrate-to-file-system-plugin)
-- `@tauri-apps/api/global-shortcut` モジュールは削除されました。代わりに `@tauri-apps/plugin-global-shortcut` を使用して下さい。[移行先](#migrate-to-global-shortcut-plugin)
-- `@tauri-apps/api/http` モジュールは削除されました。代わりに `@tauri-apps/plugin-http` を使用してください。[移行先](#migrate-to-http-plugin)
-- `@tauri-apps/api/os` モジュールは削除されました。代わりに `@tauri-apps/plugin-os` を使用して下さい。[移行先](#migrate-to-os-plugin)
-- `@tauri-apps/api/notification` モジュールは削除されました。代わりに `@tauri-apps/plugin-notification` を使用して下さい。[移行先](#migrate-to-notification-plugin)
-- `@tauri-apps/api/process` モジュールは削除されました。代わりに `@tauri-apps/plugin-process` を使用して下さい。[移行先](#migrate-to-process-plugin)
-- `@tauri-apps/api/shell` モジュールは削除されました。代わりに `@tauri-apps/plugin-shell` を使用して下さい。[移行先](#migrate-to-shell-plugin)
-- `@tauri-apps/api/updater` モジュールは削除されました。代わりに `@tauri-apps/plugin-updater` を使用してください。[移行先](#migrate-to-updater-plugin)
-- `@tauri-apps/api/window` モジュールは `@tauri-apps/api/webviewWindow` に改称されました。[移行先](#migrate-to-new-window-api)
+- `@tauri-apps/api/tauri` モジュールは `@tauri-apps/api/core` に改称されました。[移行先](#コアモジュールの移行)
+- `@tauri-apps/api/cli` モジュールは削除されました。代わりに `@tauri-apps/plugin-cli` を使用して下さい。[移行先](#cli-プラグインの移行)
+- `@tauri-apps/api/clipboard` モジュールは削除されました。代わりに `@tauri-apps/plugin-clipboard` を使用して下さい。[移行先](#clipboard-プラグインの移行)
+- `@tauri-apps/api/dialog` モジュールは削除されました。代わりに `@tauri-apps/plugin-dialog` を使用して下さい。[移行先](#dialog-プラグインの移行)
+- `@tauri-apps/api/fs` モジュールは削除されました。代わりに `@tauri-apps/plugin-fs` を使用して下さい。[移行先](#file-System-プラグインの移行)
+- `@tauri-apps/api/global-shortcut` モジュールは削除されました。代わりに `@tauri-apps/plugin-global-shortcut` を使用して下さい。[移行先](#global-shortcut-プラグインの移行)
+- `@tauri-apps/api/http` モジュールは削除されました。代わりに `@tauri-apps/plugin-http` を使用してください。[移行先](#http-プラグインの移行)
+- `@tauri-apps/api/os` モジュールは削除されました。代わりに `@tauri-apps/plugin-os` を使用して下さい。[移行先](#OS-プラグインの移行)
+- `@tauri-apps/api/notification` モジュールは削除されました。代わりに `@tauri-apps/plugin-notification` を使用して下さい。[移行先](#notification-プラグインの移行)
+- `@tauri-apps/api/process` モジュールは削除されました。代わりに `@tauri-apps/plugin-process` を使用して下さい。[移行先](#Process-プラグインの移行)
+- `@tauri-apps/api/shell` モジュールは削除されました。代わりに `@tauri-apps/plugin-shell` を使用して下さい。[移行先](#Shell-プラグインの移行)
+- `@tauri-apps/api/updater` モジュールは削除されました。代わりに `@tauri-apps/plugin-updater` を使用してください。[移行先](#Updater-プラグインの移行)
+- `@tauri-apps/api/window` モジュールは `@tauri-apps/api/webviewWindow` に改称されました。[移行先](#新しい-Window-API-への移行)
 
 バージョン 1 のプラグインは、`@tauri-apps/plugin-<plugin-name>` として公開されています。これは、以前には git から `tauri-plugin-<plugin-name>-api` として入手可能だったものです。
 
@@ -1145,7 +1145,7 @@ fn main() {
 </TabItem>
 </Tabs>
 
-### Path to Tauri Manger の移行
+### Path to Tauri Manager の移行
 
 Rust の `tauri::api::path` モジュール機能および `tauri::PathResolver` は `tauri::Manager::path` に移動されました：
 
@@ -1166,7 +1166,7 @@ tauri::Builder::default()
 
 Rust 関連では、`Window` の名称が `WebviewWindow` に、そのビルダー名 `WindowBuilder` が `WebviewWindowBuilder` に、`WindowUrl` の名称が `WebviewUrl` に変更されました。
 
-さらには、上位の「ウィンドウ 親 API」をサポートするために、`Manager::get_window` 関数は `get_webview_window`に、ウィンドウズの `parent_window` API が `parent_raw` に改称されています。 
+さらには、上位の「ウィンドウ 親 API」をサポートするために、`Manager::get_window` 関数は `get_webview_window`に、ウィンドウズの `parent_window` API が `parent_raw` に改称されています。
 
 JavaScript 関連では、`WebviewWindow` クラスが `@tauri-apps/api/webviewWindow` パスにエクスポートされるようになりました。
 
@@ -1174,7 +1174,7 @@ JavaScript 関連では、`WebviewWindow` クラスが `@tauri-apps/api/webviewW
 
 ### 埋め込み追加ファイルの移行（リソース）
 
-JavaScript 関連では、[File System プラグインの移行](#file-system-プラグインの移行) を実行することを忘れないでください。
+JavaScript 関連では、[File System プラグインの移行](#file-System-プラグインの移行) を実行することを忘れないでください。
 さらに、[許可の移行](#許可の移行) の項で、「バージョン 1」許可リストに加えられた変更の内容にも注意してください。
 
 Rust 関連では、[Path to Tauri Manger の移行](#path-to-tauri-manager-の移行) の説明内容を必ず実行してください。
@@ -1185,7 +1185,7 @@ Tauri バージョン 1（v1）では、外部バイナリとその引数は許�
 
 JavaScript 関連では、[Shell プラグインの移行](#shell-プラグインの移行) の内容を必ず実行して下さい。
 
-Rust 関連では、`tauri::api::process` API が削除されています。代わりに `tauri_plugin_shell::ShellExt` および `tauri_plugin_shell::process::CommandEvent` API を使用してください。使用法については、[外部バイナリの埋め込み](../develop/sidecar/#rust-から実行) ガイドを参照して下さい。
+Rust 関連では、`tauri::api::process` API が削除されています。代わりに `tauri_plugin_shell::ShellExt` および `tauri_plugin_shell::process::CommandEvent` API を使用してください。使用法については、[外部バイナリの埋め込み](/jp/develop/sidecar/#rust-から実行) ガイドを参照して下さい。
 
 「process-command-api」機能フラグは バージョン 2（v2）で削除されました。そのため、外部バイナリの実行に、この機能を Tauri 構成で定義する必要がなくなりました。
 
@@ -1198,7 +1198,7 @@ Rust 関連では、`tauri::api::process` API が削除されています。代�
 
 `migrate` CLI コマンドは、v1 許可リストを自動的に解析し、関連する機能ファイルを生成します。
 
-許可と機能の詳細については、[セキュリティ関連文書](../security/)を参照してください。
+許可と機能の詳細については、[セキュリティ関連文書](/jp/security/)を参照してください。
 
 <div style="text-align: right;">
 【※ この日本語版は、「Nov 13, 2024 英語版」に基づいています】<br />
