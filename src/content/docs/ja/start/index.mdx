@@ -7,13 +7,13 @@ sidebar:
 
 Tauri は、主要なデスクトップおよびモバイル・プラットフォームのすべてで、軽量・高速なバイナリ・ファイルを構築できるフレームワーク（仕組み）です。フロントエンドには、HTML、JavaScript、CSS にコンパイルされるフレームワークを利用してユーザー・エクスペリエンス（UX）を構築し、バックエンドの処理ロジックには、必要に応じて Rust、Swift、Kotlin などの言語を活用できます。
 
-以下のシェル・コマンド（Bash、PowerShell、…）のいずれかを使用して、「Tauri アプリを作成する」[`create-tauri-app`](https://github.com/tauri-apps/create-tauri-app) を始める準備をしましょう。まず「必須事項ガイド」[prerequisites guide](/jp/start/prerequisites/) に従って、Tauri に必要なすべての「依存関係」をインストールし、次に推奨されるフロントエンド構成についての「フロントエンド構成ガイド」[Frontend Configuration guides](/jp/start/frontend/) を参照してください。
+以下のシェル・コマンド（Bash、PowerShell、…）のいずれかを使用して、「Tauri アプリを作成する」[`create-tauri-app`](https://github.com/tauri-apps/create-tauri-app) を始める準備をしましょう。まず「必須事項ガイド」[prerequisites guide](/ja/start/prerequisites/) に従って、Tauri に必要なすべての「依存関係」をインストールし、次に推奨されるフロントエンド構成についての「フロントエンド構成ガイド」[Frontend Configuration guides](/ja/start/frontend/) を参照してください。
 
 import Cta from '@fragments/cta.mdx';
 
 <Cta />
 
-最初のアプリを作成した後、「機能と使用例のリスト」 [List of Features & Recipes](/jp/plugin/) の章で Tauri のそのほかの機能や使い方を調べることができます。
+最初のアプリを作成した後、「機能と使用例のリスト」 [List of Features & Recipes](/ja/plugin/) の章で Tauri のそのほかの機能や使い方を調べることができます。
 
 ## Tauri の利点
 
@@ -23,7 +23,7 @@ Tauri には、プログラム開発者が拠り所とできる三つの大き�
 - システム本体の Web ビューを使用することによるでバンドルサイズの軽量化
 - 任意のフロントエンド技術の利用や複数のコンピュータ言語を統合できる柔軟性
 
-Tauri の根本思想については、「Tauri 1.0 ブログ [Tauri 1.0 blog post](/jp/blog/tauri-1-0/)」を参照してください。
+Tauri の根本思想については、「Tauri 1.0 ブログ [Tauri 1.0 blog post](/ja/blog/tauri-1-0/)」を参照してください。
 
 ### 安全なプログラム基盤
 
@@ -37,17 +37,17 @@ Tauri は、「Rust」を用いて構築されていますので、Rust が提�
 
 Tauri アプリは、すでにユーザー・システムに搭載されている Web ビューを利用しています。したがって、どの　Tauri アプリも、そのアプリに必要なコードとデータ資産のみを含み、アプリ内にブラウザ・エンジンを同梱する必要がありません。このことは、つまり、最小の Tauri アプリは 600 KB 以下のサイズになりうることを意味しています。
 
-最適化されたアプリの作成の仕方については、「アプリ・サイズの考え方 [App Size concept](/jp/concept/size/) をご覧ください。
+最適化されたアプリの作成の仕方については、「アプリ・サイズの考え方 [App Size concept](/ja/concept/size/) をご覧ください。
 
 ### 柔軟性のある基本仕様
 
-Tauri は ウェブ技術を利用していますので、事実上どのフロントエンド技術も Tauri と互換性があります。「フロントエンド構成ガイド [Frontend Configuration guide](/jp/start/frontend/) 」では、良く用いられるフロントエンド技術の一般的な構成例を記載しています。
+Tauri は ウェブ技術を利用していますので、事実上どのフロントエンド技術も Tauri と互換性があります。「フロントエンド構成ガイド [Frontend Configuration guide](/ja/start/frontend/) 」では、良く用いられるフロントエンド技術の一般的な構成例を記載しています。
 
-JavaScript 部分と Rust 部分間の結合には、JavaScript の「`invoke`（呼出し）」関数が、Swift や Kotlin との結合には「[Tauri Plugins](/jp/develop/plugins/)（Tauri プラグイン）」が利用できます。
+JavaScript 部分と Rust 部分間の結合には、JavaScript の「`invoke`（呼出し）」関数が、Swift や Kotlin との結合には「[Tauri Plugins](/ja/develop/plugins/)（Tauri プラグイン）」が利用できます。
 
 [TAO](https://github.com/tauri-apps/tao) は Tauri のウィンドウ生成を、[WRY](https://github.com/tauri-apps/wry) はウェブ表示のレンダリングを行なうプラグインです。このようなプラグインは Tauri によって管理されているライブラリで、Tauri が対応できる以上の、より進んだシステム統合が必要な場合に直接使用できます。
 
-加えて、Tauri には、Tauri 本体が対応できる機能を拡張する多くのプラグインもあります。このようなプラグインは、コミュニティによって提供されているプラグインと並んで、「プラグイン [Plugins section](/jp/plugin/)」のセクションで見つけることができます。
+加えて、Tauri には、Tauri 本体が対応できる機能を拡張する多くのプラグインもあります。このようなプラグインは、コミュニティによって提供されているプラグインと並んで、「プラグイン [Plugins section](/ja/plugin/)」のセクションで見つけることができます。
 
 <div style="text-align: right;">
   【※ この日本語版は、「Oct 1, 2024 英語版」に基づいています】

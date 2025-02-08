@@ -63,7 +63,7 @@ Tauri v2 CLI には、移行作業の大部分を自動化する `migrate` コ�
     cargo tauri migrate'
 />
 
-`migrate` コマンドの詳細については、[コマンドライン・インターフェース・リファレンス](/jp/reference/cli/#migrate) を参照してください。
+`migrate` コマンドの詳細については、[コマンドライン・インターフェース・リファレンス](/ja/reference/cli/#migrate) を参照してください。
 
 ## 変更の概要
 
@@ -83,7 +83,7 @@ Tauri 1.0 から Tauri 2.0 への変更内容の概要は以下のとおりで�
 - `tauri > updater > dialog` を削除。
 - `tauri > updater` を `plugins > updater` へ移動。
 - `bundle > createUpdaterArtifacts` を追加。アプリ・アップデーターを使用する場合には設定する必要があります。
-  - すでに配布されている v1 アプリをアップグレードする場合は、これを `v1compatible` に設定してください。詳しくは [アップデーター・ガイド](/jp/plugin/updater/) を参照してください。
+  - すでに配布されている v1 アプリをアップグレードする場合は、これを `v1compatible` に設定してください。詳しくは [アップデーター・ガイド](/ja/plugin/updater/) を参照してください。
 - `tauri > systemTray` を `app > trayIcon` に改称。
 - `tauri > pattern` を `app > security > pattern` へ移動。
 - `tauri > bundle` をトップレベルへ移動。
@@ -99,7 +99,7 @@ Tauri 1.0 から Tauri 2.0 への変更内容の概要は以下のとおりで�
 - `build > distDir` を `frontendDist` に改称。
 - `build > devPath` を `devUrl` に改称。
 
-[Tauri 2.0 設定 API レファレンス](/jp/reference/config/)
+[Tauri 2.0 設定 API レファレンス](/ja/reference/config/)
 
 ### Cargo の新機能
 
@@ -1185,7 +1185,7 @@ Tauri バージョン 1（v1）では、外部バイナリとその引数は許�
 
 JavaScript 関連では、[Shell プラグインの移行](#shell-プラグインの移行) の内容を必ず実行して下さい。
 
-Rust 関連では、`tauri::api::process` API が削除されています。代わりに `tauri_plugin_shell::ShellExt` および `tauri_plugin_shell::process::CommandEvent` API を使用してください。使用法については、[外部バイナリの埋め込み](/jp/develop/sidecar/#running-it-from-rust) ガイドを参照して下さい。
+Rust 関連では、`tauri::api::process` API が削除されています。代わりに `tauri_plugin_shell::ShellExt` および `tauri_plugin_shell::process::CommandEvent` API を使用してください。使用法については、[外部バイナリの埋め込み](/ja/develop/sidecar/#running-it-from-rust) ガイドを参照して下さい。
 
 「process-command-api」機能フラグは バージョン 2（v2）で削除されました。そのため、外部バイナリの実行に、この機能を Tauri 構成で定義する必要がなくなりました。
 
@@ -1198,7 +1198,7 @@ Rust 関連では、`tauri::api::process` API が削除されています。代�
 
 `migrate` CLI コマンドは、v1 許可リストを自動的に解析し、関連する機能ファイルを生成します。
 
-許可と機能の詳細については、[セキュリティ関連文書](/jp/security/)を参照してください。
+許可と機能の詳細については、[セキュリティ関連文書](/ja/security/)を参照してください。
 
 <div style="text-align: right;">
   【※ この日本語版は、「Nov 13, 2024 英語版」に基づいています】
