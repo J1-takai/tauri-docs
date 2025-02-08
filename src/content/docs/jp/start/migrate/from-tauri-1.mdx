@@ -1001,7 +1001,7 @@ fn main() {
 
 ### Tray Icon モジュールの移行
 
-Rust の `SystemTray` API は表記の一貫性確保のために `TrayIcon` に改称されています。新しい  API は、Rust の「`tray` モジュール」で参照できます。
+Rust の `SystemTray` API は表記の一貫性確保のために `TrayIcon` に改称されています。新しい API は、Rust の「`tray` モジュール」で参照できます。
 
 #### `tauri::tray::TrayIconBuilder` の使用
 
@@ -1019,7 +1019,7 @@ let tray = tauri::tray::TrayIconBuilder::with_id("my-tray").build(app)?;
 
 #### Tray Events（トレイ・イベント）
 
-`tauri::SystemTray::on_event` は `tauri::tray::TrayIconBuilder::on_menu_event` と  `tauri::tray::TrayIconBuilder::on_tray_icon_event` とに分割されました：
+`tauri::SystemTray::on_event` は `tauri::tray::TrayIconBuilder::on_menu_event` と `tauri::tray::TrayIconBuilder::on_tray_icon_event` とに分割されました：
 
 ```rust
 use tauri::{
@@ -1201,7 +1201,7 @@ Rust 関連では、`tauri::api::process` API が削除されています。代�
 許可と機能の詳細については、[セキュリティ関連文書](/jp/security/)を参照してください。
 
 <div style="text-align: right;">
-【※ この日本語版は、「Nov 13, 2024 英語版」に基づいています】<br />
-Doc-JP 2.00.00
+  【※ この日本語版は、「Nov 13, 2024 英語版」に基づいています】
+  <br />
+  Doc-JP 2.00.00
 </div>
-
