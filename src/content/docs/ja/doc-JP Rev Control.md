@@ -139,7 +139,7 @@ For the details of EN/JP doc status, see the listing below: <br> 文書番号の
 
 | EN Doc # | EN Doc Date | JP Doc # | JP Doc Date |
 | :------: | :---------- | :------: | :---------- |
-|  **00**  | 2024/10/01  |  **00**  | 2025/01/09  |
+|  **00**  | 2024/10/01  |  **00**  | 2025/02/05  |
 
 ### concept/architecture.mdx
 
@@ -165,10 +165,18 @@ For the details of EN/JP doc status, see the listing below: <br> 文書番号の
 | :------: | :---------- | :------: | :---------- |
 |  **00**  | 2024/11/27  |  **00**  | 2025/01/18  |
 
-### concept/I-P-C/brownfield.mdx
+### concept/I-P-C/brownfield.md
 
 | EN Doc # | EN Doc Date | JP Doc # | JP Doc Date |
-| :------: | :---------- | :------: | :---------- |
-|  **00**  | 2024/10/01  |  **00**  | 2025/01/18  |
+| :---: | :--- | :---: | :--- |
+| **00** | 2024/10/01 | **00** | 2025/01/18 |
+
+### concept/I-P-C/isolation.md
+
+| EN Doc # | EN Doc Date | JP Doc # | JP Doc Date |
+| :---: | :--- | :---: | :--- |
+| **00** | 2024/10/15 | **00** | 2025/01/27 |
+
+
 
 Cont.
